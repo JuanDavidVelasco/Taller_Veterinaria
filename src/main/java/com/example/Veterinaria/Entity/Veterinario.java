@@ -31,4 +31,6 @@ public class Veterinario {
     @Column(name = "especialidad", unique = true, nullable = false)
     private String especialidad;
 
+
+
 }
