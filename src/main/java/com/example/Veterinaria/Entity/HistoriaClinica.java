@@ -26,4 +26,9 @@ public class HistoriaClinica {
     @Column(name = "observaciones", columnDefinition = "TEXT")
     private String observaciones;
 
+    // Uan historia clinica pertenece solo a una mascota
+    @OneToOne
+    @JoinColumn(name = "mascota_id", unique = true)
+    private Mascota mascota;
+
 }

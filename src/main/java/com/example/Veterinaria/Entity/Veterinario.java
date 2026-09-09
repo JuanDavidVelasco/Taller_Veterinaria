@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name ="Veterinario")
 @Getter
@@ -31,6 +33,9 @@ public class Veterinario {
     @Column(name = "especialidad", unique = true, nullable = false)
     private String especialidad;
 
+    //Un veterinario ve a varias mascotas
+    @ManyToMany(mappedBy = "veterinarios")
+    private List<Mascota> mascotasAtendidas;
 
 
 }

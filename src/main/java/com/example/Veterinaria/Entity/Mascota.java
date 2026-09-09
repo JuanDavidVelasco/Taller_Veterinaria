@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Entity
-@Table(name ="Mascotagit ")
+@Table(name ="Mascota ")
 @Getter
 @Setter
 
@@ -38,5 +39,22 @@ public class Mascota {
     @Column(name = "peso")
     private Double peso;
 
+    // Varias mascotas tienen un dueño
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "propietario_id", nullable = false)
+    private Propietario propietario;
+
+    // Una mascotas puede tener solo una historia clinica
+    @OneToOne(mappedBy = "mascota", cascade = CascadeType.ALL)
+    private HistoriaClinica historiaClinica;
+
+    // una mascota la pueden atender diferentes veterinartios
+    @ManyToMany
+    @JoinTable(
+            name = "mascota_veterinario",
+            joinColumns = @JoinColumn(name = "mascota_id"),
+            inverseJoinColumns = @JoinColumn(name = "veterinario_id")
+    )
+    private List<Veterinario> veterinarios;
 
     }

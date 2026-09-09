@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name ="Propietario")
 @Getter
@@ -32,5 +34,8 @@ public class Propietario {
     @Column(name = "correo", unique = true, nullable = false)
     private String correo;
 
+    //un propietario puede tener muchas mascotas
+    @OneToMany(mappedBy = "propietario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mascota> mascotas;
 
 }
