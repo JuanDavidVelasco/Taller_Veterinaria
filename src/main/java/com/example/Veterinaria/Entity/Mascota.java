@@ -1,9 +1,13 @@
 package com.example.Veterinaria.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
 import java.util.List;
 
 @Entity
@@ -41,6 +45,9 @@ public class Mascota {
 
     // Varias mascotas tienen un dueño
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "propietario_id", nullable = false)
     private Propietario propietario;
 

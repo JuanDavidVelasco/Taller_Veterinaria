@@ -1,11 +1,15 @@
 package com.example.Veterinaria.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -35,7 +39,10 @@ public class Veterinario {
 
     //Un veterinario ve a varias mascotas
     @ManyToMany(mappedBy = "veterinarios")
-    private List<Mascota> mascotasAtendidas;
+    @JsonBackReference
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<Mascota> mascotas = new ArrayList<>();
 
 
 }

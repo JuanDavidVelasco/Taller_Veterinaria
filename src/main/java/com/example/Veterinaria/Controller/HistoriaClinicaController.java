@@ -15,7 +15,7 @@ import java.util.List;
 
 @RequestMapping("api/historiaClinica")
 
-public class HistoriaController {
+public class HistoriaClinicaController {
 
     private final HistoriaClinicaService historiaService;
 

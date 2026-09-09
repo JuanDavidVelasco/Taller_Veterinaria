@@ -1,4 +1,8 @@
 package com.example.Veterinaria.Repository;
 
-public class HistoriaRepository {
+import com.example.Veterinaria.Entity.HistoriaClinica;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface HistoriaRepository extends JpaRepository<HistoriaClinica, Long> {
+
 }

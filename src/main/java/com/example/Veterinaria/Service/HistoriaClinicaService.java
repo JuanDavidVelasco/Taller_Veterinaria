@@ -5,7 +5,7 @@ import com.example.Veterinaria.Entity.HistoriaClinica;
 import java.util.List;
 import java.util.Optional;
 
-public interface HistoriaService {
+public interface HistoriaClinicaService {
 
     // Listar Historias
     List<HistoriaClinica> listarHistorias();

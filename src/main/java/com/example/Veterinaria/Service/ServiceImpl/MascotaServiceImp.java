@@ -7,11 +7,11 @@ import com.example.Veterinaria.Repository.MascotaRepository;
 import com.example.Veterinaria.Repository.VeterinarioRepository;
 import com.example.Veterinaria.Service.MascotaService;
 import lombok.AllArgsConstructor;
-import org.hibernate.internal.util.Optional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor

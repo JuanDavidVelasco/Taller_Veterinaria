@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 public class PropietarioServiceImpl implements PropietarioService {
 
-    // Cambiado a 'repository' para coincidir con la imagen
     private final PropietarioRepository repository;
 
     @Override
